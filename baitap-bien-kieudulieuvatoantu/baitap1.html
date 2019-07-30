@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let vatly;
+        let hoahoc;
+        let sinhhoc;
+        vatly = prompt("Điểm môn Vật Lý (1 đến 10)");
+        hoahoc = prompt("Điểm môn Hóa Học (1 đến 10):");
+        sinhhoc = prompt("Điểm môn Sinh học (1 đến 10):");
+
+        let vatlyok = parseInt(vatly);
+        let hoahocok = parseInt(hoahoc);
+        let sinhhocok = parseInt(sinhhoc);
+        let trungbinhmon = (vatlyok + hoahocok + sinhhocok)/3;
+        let tongdiem = vatlyok + hoahocok + sinhhocok;
+document.write("Điểm trung bình: "+trungbinhmon);
+document.write("<br/>");
+document.write("Tổng điểm các môn: "+ tongdiem);
+
+    </script>
+
+</body>
+</html>
