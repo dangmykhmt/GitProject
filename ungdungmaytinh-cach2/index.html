@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <from>
+                <input type="text" id="nhapso1" value="">
+                <input type="text" id="nhapso2" value="">
+                <br>
+                <br>
+         <button onclick="thuattoan(1);">Addition(+)</button>
+         <button onclick="thuattoan(2);">Subtraction(-)</button>
+         <button onclick="thuattoan(3);">Multiplication(X)</button>
+         <button onclick="thuattoan(4);">Division(/)</button>
+            
+    </from>
+    <p id="Ketqua"></p>
+    <script>
+    function thuattoan(a){
+       
+        let sothunhat = parseInt(document.getElementById('nhapso1').value);
+        let sothuhai = parseInt(document.getElementById('nhapso2').value);
+        let ketqua
+        if(a==1){
+           ketqua = sothunhat + sothuhai
+         
+        }
+        if(a==2){
+           ketqua = sothunhat - sothuhai
+           
+        }
+        if(a==3){
+           ketqua = sothunhat * sothuhai
+           
+        }
+        if(a==4){
+           ketqua = sothunhat / sothuhai
+           
+        }
+        document.getElementById('Ketqua').innerHTML ='Kết quả = ' +ketqua
+    }
+    
+    
+    
+    </script>
+</body>
+</html>
+

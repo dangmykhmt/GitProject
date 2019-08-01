@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Amout</td>
+            <td>From Money</td>
+            <td>To Money</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+            <input type="text" id="inputMoney" value="">
+            </td>
+            <td>
+                <select name="From" id="FromMoney">
+                    <option value="VND">Việt Nam đồng</option>
+                    <option value="USD">USD</option>
+                    <option value="AUD">AUD</option>
+                </select>
+            </td>
+            <td>
+                    <select name="To" id="ToMoney">
+                            <option value="VND">Việt Nam đồng</option>
+                            <option value="USD" selected >USD</option>
+                            <option value="AUD">AUD</option>
+                        </select>
+            </td>
+            <td>
+                <button onclick="Convert();">Convert</button>
+            </td>
+        </tr>
+    </table>
+    <p id="result"></p>
+
+<script>
+function Convert(){
+
+    let dauvao = document.getElementById('inputMoney').value;
+    let frommoney1 = document.getElementById('FromMoney').value;
+    let tomoney = document.getElementById('ToMoney').value;
+    let result = document.getElementById('result');
+   
+    switch(frommoney1){
+        case 'USD':{
+            switch(tomoney){
+                case 'USD':{
+                    result.innerHTML = 'Result: ' + dauvao + ' ' + tomoney;
+                    break;
+                }
+                case 'VND':{
+                    result.innerHTML = 'Result: ' + (dauvao * 23000) + ' ' + tomoney;
+                    break;
+                }
+                case 'AUD':{
+                    result.innerHTML = 'Result: ' + (dauvao/2) + ' ' + tomoney;
+                    break;
+                }
+            }
+            break;
+        }
+        case 'VND':{
+            switch(tomoney){
+                case 'USD':{
+                    result.innerHTML = 'Result: ' + (dauvao/23000) + ' ' + tomoney;
+                    break;
+                }
+                case 'VND':{
+                    result.innerHTML = 'Result: ' + dauvao + ' ' + tomoney;
+                    break;
+                }
+                case 'AUD':{
+                    result.innerHTML = 'Result: ' + (dauvao*16000) + ' ' + tomoney;
+                    break;
+                }
+            }
+            break;
+        }
+        case 'AUD':{
+            switch(tomoney){
+                case 'USD':{
+                    result.innerHTML = 'Result: ' + (dauvao/2) + ' ' + tomoney;
+                    break;
+                }
+                case 'VND':{
+                    result.innerHTML = 'Result: ' + (dauvao*16000) + ' ' + tomoney;
+                    break;
+                }
+                case 'AUD':{
+                    result.innerHTML = 'Result: ' + (dauvao) + ' ' + tomoney;
+                    break;
+                }
+            }
+            break;
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>

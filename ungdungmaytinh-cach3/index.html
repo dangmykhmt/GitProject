@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="nhap vao 1" value="">
+        <input type="text" id="nhap vao 2" value="">
+        <br>
+        <br>
+        <input type="button" value="Addition(+)" onclick="pheptoan(1)">
+        <input type="button" value="Subtraction(-)" onclick="pheptoan(2)">
+        <input type="button" value="Multiplication(X)" onclick="pheptoan(3)">
+        <input type="button" value="Division(/)" onclick="pheptoan(4)">
+    </form>
+    <p id="ketquane"></p>
+    <script>
+        function pheptoan(a){
+            let input1 = parseInt(document.getElementById('nhap vao 1').value);
+            let input2 = parseInt(document.getElementById('nhap vao 2').value);
+            let ketqua;
+            switch(a){
+                case 1:{
+                    ketqua = input1 + input2
+                    break;
+                }
+                case 2:{
+                    ketqua = input1 - input2
+                    break;
+                }
+                case 3:{
+                    ketqua = input1 * input2
+                    break;
+                }
+                case 4:{
+                    ketqua = input1 / input2
+                    break;
+                }
+            }
+            document.getElementById('ketquane').innerHTML = ketqua
+        }
+    </script>
+</body>
+</html>
