@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ứng dụng Do You Love Me</title>
+</head>
+<body>
+    <form>
+        <h2 style="position:absolute;left:620px; top:250px;"/>Do you love me? </h2>
+        <input type="button" value="Có" style="position:absolute;left:620px; top:350px;" onclick="agree();"/>
+        <input type="button" value="Không" style="position:absolute;left:670px; top:350px;" id='lamviec' onmouseover="refuse();"/>
+    </form>
+    <script>
+    function agree(){
+         alert('Thanks')
+       
+    }
+
+
+
+    function refuse(){
+        let element = document.getElementById('lamviec');
+
+element.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+element.style.top = Math.floor(Math.random() * window.innerHeight) + 'px';
+    //  }
+    }
+    </script>
+</body>
+</html>
