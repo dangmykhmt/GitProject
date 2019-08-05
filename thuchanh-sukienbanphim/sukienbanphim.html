@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="docReady()">
+  
+    <img id="nobita" src="images/nobita.jpg" style="position:absolute;left:0; top:0;" height="100" width="80"/>
+
+<script>
+    let elevent = document.getElementById('nobita')
+function An_chuottrai(){
+elevent.style.left = parseInt(elevent.style.left) - 10 + 'px'
+}
+function An_chuotphai(){
+    elevent.style.left = parseInt(elevent.style.left) + 10 + 'px'
+}
+function An_chuotlen(){
+    elevent.style.top = parseInt(elevent.style.top) - 10 + 'px'
+}
+
+function An_chuotxuong(){
+    elevent.style.top = parseInt(elevent.style.top) + 10 + 'px'
+}
+
+function moveSelection(a){
+switch (a.keyCode){
+    case 37:{
+        An_chuottrai();
+        break;
+    }
+    case 38:{
+        An_chuotlen();
+        break;
+    }
+    case 39:{
+        An_chuotphai();
+        break;
+    }
+    case 40:{
+        An_chuotxuong();
+        break;
+    }
+}
+}
+
+function docReady() {
+    window.addEventListener('keydown', moveSelection);
+}
+
+</script>
+
+</body>
+</html>
