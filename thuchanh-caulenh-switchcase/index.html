@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+#display1{
+    font-style: initial;
+    color: black
+}
+</style>
+<body>
+    <table>
+        <tr>    
+            <td><p>Tháng</p></td>
+           <td><input type="text" value="" id="number1"></td>
+            <td><input type="button" value="Tính số ngày" type="radio" onclick="ketqua1();"></td>
+        </tr>
+    </table>
+    <p id='display1'></p>
+    <script>
+        
+    function ketqua1(){
+        let month = parseInt(document.getElementById("number1").value);
+     
+        switch(month){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:{
+                document.getElementById('display1').innerHTML = 'Tháng ' + month + ' có 31 ngày'
+                break;
+            }
+            case 2:{
+                document.getElementById('display1').innerHTML = 'Tháng ' + month + ' có 28 ngày hoặc 29 ngày'
+                break;
+            }
+            case 4:
+            case 6:
+            case 9:
+            case 11:{
+                document.getElementById('display1').innerHTML = 'Tháng ' + month + ' có 30 ngày'
+                break;
+            }
+            default:
+                document.getElementById('display1').innerHTML = 'Không tồn tại tháng này'
+        }
+        
+    }
+    </script>
+</body>
+</html>
