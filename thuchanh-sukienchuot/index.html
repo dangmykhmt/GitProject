@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <img src="images/ball.JPG" alt="Ball not display" id="myImage" style="position: relative; left:0px;top:0px;" width="150" height="150">
+        <p>Click button below to move the image to right</p>
+        <input type="button" value="Click Me" onclick="click_moveRight();"></input>
+    </form>
+    <script>
+        let ball = document.getElementById('myImage');
+        function click_moveRight(){
+            ball.style.left = parseInt(ball.style.left) + 100 + "px";
+        }
+       
+
+        // function ready(){
+        //     window.addEventListener("click",click_moveRight);
+        // }
+    </script>
+</body>
+</html>
+
