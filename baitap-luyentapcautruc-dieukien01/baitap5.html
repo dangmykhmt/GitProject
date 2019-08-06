@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let baikiemtra = +prompt('Nhập điểm bài kiểm tra: ');
+    let baigiuaky = +prompt('Nhập điểm kiểm tra giữa kỳ: ');
+    let diemthicuoiky = +prompt('Nhập điểm thi cuối kỳ: ');
+    let diemtrungbinh = (baikiemtra + baigiuaky*2 + diemthicuoiky*3)/6
+        if(diemtrungbinh>=8){
+            alert('Học sinh Giỏi');
+        }
+        else if(diemtrungbinh>=6.5){
+            alert('Học sinh Khá');
+        }
+        else if(diemtrungbinh>5){
+            alert('Học sinh Trung Bình');
+        }
+        else{
+            alert('Học sinh Yếu')
+        }
+    </script>
+</body>
+</html>
