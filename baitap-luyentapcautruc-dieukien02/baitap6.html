@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giải phương trình bậc 1</title>
+</head>
+<body>
+    <script>
+    let a = +prompt('Nhập a: ');
+    let b = +prompt('Nhập b: ');
+    let nghiem = -b/a
+    if(a==0&&b==0){
+        alert('Phương trình có vô số nghiệm');
+    }
+    else if(a==0&&b!==0){
+    alert('Phương trình vô nghiệm');
+    }
+    else if(a!==0){
+    alert('Phương trình có nghiệm = ' +nghiem);
+    }
+    </script>
+</body>
+</html>

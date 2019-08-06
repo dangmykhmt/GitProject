@@ -11,45 +11,50 @@
     <img id="nobita" src="images/nobita.jpg" style="position:absolute;left:0; top:0;" height="100" width="80"/>
 
 <script>
-    let elevent = document.getElementById('nobita')
-function An_chuottrai(){
-elevent.style.left = parseInt(elevent.style.left) - 10 + 'px'
-}
-function An_chuotphai(){
-    elevent.style.left = parseInt(elevent.style.left) + 10 + 'px'
-}
-function An_chuotlen(){
-    elevent.style.top = parseInt(elevent.style.top) - 10 + 'px'
-}
+    let elevent = document.getElementById('nobita');
 
-function An_chuotxuong(){
-    elevent.style.top = parseInt(elevent.style.top) + 10 + 'px'
-}
+    function moveLeft(){
+        if(parseInt(elevent.style.left) >=0)
+            elevent.style.left = parseInt(elevent.style.left) - 10 + 'px'
+    }
+    function moveRight(){
+        if((parseInt(elevent.style.left) + 80) < window.innerWidth)
+            elevent.style.left = parseInt(elevent.style.left) + 10 + 'px'
+    }
+    function moveUp(){
+        if(parseInt(elevent.style.top) >=0)
+            elevent.style.top = parseInt(elevent.style.top) - 10 + 'px'
+    }
 
-function moveSelection(a){
-switch (a.keyCode){
-    case 37:{
-        An_chuottrai();
-        break;
+    function moveDown(){
+        if((parseInt(elevent.style.top) + 100) < window.innerHeight)
+            elevent.style.top = parseInt(elevent.style.top) + 10 + 'px'
     }
-    case 38:{
-        An_chuotlen();
-        break;
-    }
-    case 39:{
-        An_chuotphai();
-        break;
-    }
-    case 40:{
-        An_chuotxuong();
-        break;
-    }
-}
-}
 
-function docReady() {
-    window.addEventListener('keydown', moveSelection);
-}
+    function moveSelection(a){
+        switch (a.keyCode){
+            case 37:{
+                moveLeft();
+                break;
+            }
+            case 38:{
+                moveUp();
+                break;
+            }
+            case 39:{
+                moveRight();
+                break;
+            }
+            case 40:{
+                moveDown();
+                break;
+            }
+        }
+    }
+
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
 
 </script>
 

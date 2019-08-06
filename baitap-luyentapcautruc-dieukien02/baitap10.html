@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Số tiền điện tiêu thụ</title>
+</head>
+<body>
+    <script>
+    let sodientieuthu = +prompt("Nhập số điện tiêu thụ của nhà bạn");
+    let sotien;
+    if(sodientieuthu<51){
+        sotien = sodientieuthu*1.678;
+    }
+    else if(sodientieuthu<101){
+        sotien = 50*1.678 + (sodientieuthu - 50)*1.734;
+    }
+    else if(sodientieuthu<201){
+        sotien = 50*1.678 + 50*1.734 + (sodientieuthu - 100)*2.014;
+    }
+    else if(sodientieuthu<301){
+        sotien = 50*1.678 + 50*1.734 + 100*2.014 + (sodientieuthu - 200)*2.536;
+    }
+    else if(sodientieuthu<401){
+        sotien = 50*1.678 + 50*1.734 + 100*2.014 + 100*2.536 + (sodientieuthu - 300)*2.834;
+    }
+    else {
+        sotien = 50*1.678 + 50*1.734 + 100*2.014 + 100*2.536 + 100*2.834 + (sodientieuthu - 400)*2.927;
+    }
+alert('Số tiền phải trả tháng này của nhà bạn: '+ sotien.toFixed(2) + ' VND')
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // console.log(Math.sqrt(25))
+    let a = +prompt('Nhập a: ');
+    let b = +prompt('Nhập b: ');
+    let c = +prompt('Nhập c: ');
+    let delta = b**2 - 4*a*c
+    let nghiemkep = -b/(2*a)
+    let dacbiet1 = (a - b + c)
+    let dacbiet2 = (a + b + c)
+    let nghiemphanbiet1 = (-b + Math.sqrt(delta))/(2*a)
+    let nghiemphanbiet2 = (-b - Math.sqrt(delta))/(2*a)
+    if(dacbiet2==0){
+        alert('Phương trình có nghiệm: x1 = 1 ; x2 = '+ (c/a))
+    }
+    else if(dacbiet1==0){
+        alert('Phương trình có nghiệm: x1 = -1 ; x2 = '+ (-c/a))
+    }
+    else if(delta<0){
+        alert('Phương trình vô nghiệm.')
+    }
+    else if(delta==0){
+        alert('Phương trình có nghiệm kép x1 = x2 ='+ nghiemkep)
+    }
+    else
+        alert('Phương trình có 2 nghiệm phân biệt x1 = '+ nghiemphanbiet1 + ' , x2 ='+ nghiemphanbiet2)
+    
+    </script>
+</body>
+</html>
