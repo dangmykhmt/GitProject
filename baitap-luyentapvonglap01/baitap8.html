@@ -17,24 +17,35 @@
         let b = +prompt('Nhập số b để tạo khoảng ab (a<b):')
         let randomKhoang = Math.floor(Math.random() * (a - b) ) + b
 // alert(randomKhoang)
-        
+        let i = 1
 
 
-        while(true){
-            let nguoidungNhap = prompt('xin mời bạn đoán số')
+        while(i<4){
+            let nguoidungNhap = prompt('xin mời bạn đoán số trong khoảng ab. chỉ nhập được tối đa 3 lần')
+
+            if(nguoidungNhap>b || nguoidungNhap < a){
+                alert('Nhập ngoài khoảng ab. Số lần nhập : '+ i +'(tối đa 3 lần')
+                i++;
+            }
+            else 
             if(nguoidungNhap>randomKhoang){
-                alert('Số của bạn chọn lớn hơn kết quả vui lòng chọn lại')
+                alert('Số của bạn chọn lớn hơn kết quả vui lòng chọn lại. Số lần nhập : '+ i +'(tối đa 3 lần');
+                i++;
             }
                 else if(nguoidungNhap<randomKhoang){
-                    alert('Số của bạn chọn bé hơn kết quả vui lòng chọn lại')  
+                    alert('Số của bạn chọn bé hơn kết quả vui lòng chọn lại. Số lần nhập : '+ i +'(tối đa 3 lần') ; 
+                    i++;
                 }
                 else if(nguoidungNhap==randomKhoang){
-                    alert('Chúc mừng bạn',)
+                    alert('Chúc mừng bạn',);
                     break;
                 }
-            
+               
         }
-        // alert('213')
+       
+        if(i==4){
+            alert('GameOver');
+        }
     }
 
     
