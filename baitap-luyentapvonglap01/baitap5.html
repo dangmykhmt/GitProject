@@ -8,21 +8,21 @@
 </head>
 <body>
     <script>
-    let x1 = 1;
-    let x2 = 1;
+    let x1 =1;
+    let x2= 1;
     let fibonaci;
-    let i = 1
-    document.write('1,1')
-        do{
-            document.write(',');
-            fibonaci = x1 + x2;
-            x1 = x2;
-            x2 = fibonaci;
-            document.write(fibonaci);
-            i++;
-        }
-        while(i<19)
-    
+    let tong = '0';
+    for(let i =1;i<=20;i++){
+        fibonaci = x1 +x2
+        //  alert(fibonaci)
+        tong = parseInt(tong) +  parseInt(fibonaci)
+
+        x1 = x2;
+        x2 = fibonaci;
+
+    }
+document.write('tổng 20 số đầu của dãy fibonaci = ' +tong)
+
     </script>
 </body>
 </html>

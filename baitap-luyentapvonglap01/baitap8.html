@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ứng dụng đoán số</h1>
+
+    <input type="button" value="Chơi" onclick="choi();"></tr>
+
+    <script>
+    function choi(){
+        let a = +prompt('Nhập số a để tạo khoảng ab (a<b):')
+        let b = +prompt('Nhập số b để tạo khoảng ab (a<b):')
+        let randomKhoang = Math.floor(Math.random() * (a - b) ) + b
+// alert(randomKhoang)
+        
+
+
+        while(true){
+            let nguoidungNhap = prompt('xin mời bạn đoán số')
+            if(nguoidungNhap>randomKhoang){
+                alert('Số của bạn chọn lớn hơn kết quả vui lòng chọn lại')
+            }
+                else if(nguoidungNhap<randomKhoang){
+                    alert('Số của bạn chọn bé hơn kết quả vui lòng chọn lại')  
+                }
+                else if(nguoidungNhap==randomKhoang){
+                    alert('Chúc mừng bạn',)
+                    break;
+                }
+            
+        }
+        // alert('213')
+    }
+
+    
+    </script>
+</body>
+</html>

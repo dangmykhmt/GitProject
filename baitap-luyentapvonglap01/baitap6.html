@@ -8,21 +8,13 @@
 </head>
 <body>
     <script>
-    let i = 1;
-    let fibonaci;
-    let x1 = 1
-    let x2 = 1
-    document.write("1,1")
-    while(i<19){
-        document.write(",")
-        fibonaci = x1 + x2;
-        document.write(fibonaci);
-        x1 = x2;
-        x2 = fibonaci;
-        i++;
-        
+        let ketqua = '0';
+        let i = 7
+    for(let a=1;a<=30;a++){
+     ketqua = parseInt(ketqua) + parseInt(i)
+      i = i +7
     }
-
+    document.write('Tổng 30 số tự nhiên đầu tiên chia hết cho 7 =  ' +ketqua);
     </script>
 </body>
 </html>

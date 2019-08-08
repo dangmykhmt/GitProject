@@ -4,38 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hiển thị các số nguyên tố đầu tiên</title>
+    <title>Document</title>
 </head>
 <body>
-    <!-- <p>Nhập số lượng số nguyên tố cần hiển thị:</p>
-    <input type = "text" value="" placeholder="Nhập số" id="input"> 
-    <input type = "button" value="Hiển thị" onclick="show();">
-    <p id="hienthi"></p> -->
     <script>
-        let sout = "";
-        function check(num) {
-            for (let i=2; i<num; i++) {
-                if (num%i == 0) {
-                    return false;
-                } 
-            }
-            return true;
+    let x1 = 1;
+    let x2 = 1;
+    let fibonaci;
+    // document.write('0,1')
+    for(let i =1;i<=18;i++){
+        // document.write(',');
+        fibonaci= x1 + x2;
+        if(fibonaci%5==0){
+            document.write('số '+fibonaci+' là số đầu tiên trong dãy fibonaci chia hết cho 5.')
+            break;
         }
 
-        
-            var num =parseInt(prompt('nhap so:'));
-            var count = 0; //đếm số nguyên tố
-            var increa = 2; //biến chạy
-
-            while (count<num) {
-                if (check(increa)) {
-                    sout += increa;
-                    count++;
-                }
-                increa++;
-            }
-             document.write(sout);
-        
+        x1 = x2;
+        x2 = fibonaci;
+    }
     </script>
 </body>
 </html>
