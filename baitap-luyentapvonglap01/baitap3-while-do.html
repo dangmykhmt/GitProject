@@ -8,7 +8,20 @@
 </head>
 <body>
     <script>
-    
+    let x1 = 0;
+    let x2 = 1;
+    let fibonaci;
+    let i = 1
+    document.write('0,1')
+        do{
+            document.write(',');
+            fibonaci = x1 + x2;
+            x1 = x2;
+            x2 = fibonaci;
+            document.write(fibonaci);
+            i++;
+        }
+        while(i<19)
     
     </script>
 </body>
