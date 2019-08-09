@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let length = 5;
+        let i = 1;
+        let sout =''
+        for (let i = 1; i<=length; i++) {
+            for (j=5; j>=1; j--) {
+                if (j>i) {
+                    sout += document.write("&nbsp;&nbsp;");
+                } else sout += document.write("*");
+            }
+            sout += document.write("<br>");
+        }
+    </script>
+</body>
+</html>

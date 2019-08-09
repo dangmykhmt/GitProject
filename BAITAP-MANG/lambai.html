@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let array = new Array(5);
+    tong = [];
+    for(let i =0;i<5;i++){
+        array[i] = new Array(5);
+        tong[i]=0;
+        for(let j = 0;j<5;j++){
+            array[i][j] = Math.floor((Math.random() * 10) + 1);
+            document.write(array[i][j] +',')
+            tong[i] += array[i][j];
+        }
+        document.write('<br>')
+      
+    }
+    
+    let MAX = tong[0];
+    for(let i=1;i<5;i++){
+        if(tong[i]>MAX){
+            MAX = tong[i];
+        }
+    }
+
+    for(let i=0;i<5;i++){
+        document.write('tong hàng '+i+' = ' + tong[i] + '<br>')
+    }
+
+//    document.write(tong[4])
+    
+    document.write('tổng của dòng cao nhất' + MAX +'<br>') 
+    let tongcheochinh=0;
+    for(let i=0;i<5;i++){
+        for(let j=0;j<5;j++){
+            if(i==j){
+                tongcheochinh += array[i][j];
+            }
+        }
+    }
+
+    document.write('tổng các số trên đường chéo chính = '+tongcheochinh)
+    
+    </script>
+</body>
+</html>
