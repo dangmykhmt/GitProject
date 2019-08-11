@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      let importWindow = prompt('Nhập dãy số bất kỳ');
+     let convertArray = importWindow.toString();
+     let array = [convertArray[0]];
+
+    for(i=1;i<convertArray.length;i++){
+        if(convertArray[i]%2===0&&convertArray[i-1]%2===0){
+            array.push('-',convertArray[i]);
+        }
+            else{
+                array.push(convertArray[i]);
+            }
+    }
+    document.write(array.join(''));
+</script>
+</body>
+</html>

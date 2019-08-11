@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa</title>
+</head>
+<h3>Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa. Ví dụ: nếu bạn nhập vào chuỗi 'The Quick Brown Fox' kết quả của chương trình là 'tHE qUICK bROWN fOX'.</h3>
+<body>
+    <script>
+        let improtArray = prompt('Nhập vào chuỗi bất kỳ: ');
+        let convertImprotArray = improtArray.toString();
+        let ArrayA = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        let ArrayB = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+        let result = [];
+for(i=0;i<convertImprotArray.length;i++){
+    // if(convertImprotArray[i]!==ArrayA[i] && convertImprotArray[i]!==ArrayB[i]){
+    //     result.push(convertImprotArray[i]);
+    // }
+    // else{
+    for(j=0;j<ArrayA.length;j++){
+        if(convertImprotArray[i]===ArrayA[j]){
+            result.push(ArrayB[j]);
+        }
+        else if(convertImprotArray[i]===ArrayB[j]){
+            result.push(ArrayA[j]);
+        }
+    }
+// }
+}
+document.write(result.join())
+    </script>
+</body>
+
+</html>

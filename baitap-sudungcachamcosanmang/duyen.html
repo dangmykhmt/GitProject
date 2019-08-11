@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"id="name">
+    <button onclick="abc();">Search</button>
+    <p id="ketqua"></p>
+    <script>
+    
+    function abc(){
+    let find =document.getElementById('name').value;
+    let eng = ['dog','cat'];
+    let vie = ['chó','mèo'];
+        for(let i=0;i<find.length;i++){
+            if(find===eng[i]){
+                document.getElementById('ketqua').innerHTML = vie[i];
+                break;
+            
+            }
+            else{
+                document.getElementById('ketqua').innerHTML = "Không có"
+            }
+        }
+
+    }
+    
+    
+    </script>
+</body>
+</html>
