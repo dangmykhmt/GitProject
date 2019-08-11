@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Từ điển Việt-Anh-Việt</title>
+</head>
+<body>
+    <table>
+        <tr>
+                <td>Fill</td>      
+                <td style="text-align: center">From</td>  
+                <td style="text-align: center">To</td> 
+        </tr>
+        <tr>
+                <td><input type="text" id="inputName"></td>
+                <td><select id="selectONE">
+                     <option value="English">English</option>
+                     <option value="VietNamese">VietNamese</option>
+                    </select>
+                </td>
+                <td><select id="selectTWO">
+                    <option value="VietNamese">VietNamese</option>
+                    <option value="English">English</option>
+                    </select>
+                </td>
+                 <td><input type="button" value="Translate" onclick="start2();"></td>
+        </tr>
+    
+    </table>
+    <p id="result">kết quả</p>
+</body>
+<script>
+
+function vietanh(){
+let inputname = document.getElementById('inputName').value;
+let vie = ['chó','mèo']
+let eng = ['dog','cat']
+for(let i=0;i<vie.length;i++){
+    if(inputname===vie[i]){
+        document.getElementById('result').innerHTML = eng[i];
+        break;
+    }
+    else{
+        document.getElementById('result').innerHTML = 'Từ điển còn hạn chế chưa có từ này';
+        
+    }
+}
+}
+
+function anhviet(){
+let inputname = document.getElementById('inputName').value;
+let vie = ['chó','mèo']
+let eng = ['dog','cat']
+for(let i=0;i<eng.length;i++){
+    if(inputname===eng[i]){
+        document.getElementById('result').innerHTML = vie[i];
+        break;
+    }
+    else{
+        document.getElementById('result').innerHTML = 'Từ điển còn hạn chế chưa có từ này';
+        
+    }
+}
+}
+
+
+
+
+
+
+function start2(){
+let selectone = document.getElementById('selectONE').value;
+let selecttwo = document.getElementById('selectTWO').value;
+switch(selectone){
+    case 'English':{
+        switch(selecttwo){
+            case 'English':{
+                document.getElementById('result').innerHTML = 'Vui lòng lựa chọn lại định dạng chuyển đổi Viet-Anh-Viet';
+                break;
+            }
+            case 'VietNamese':{
+                anhviet();
+                break;
+            }
+        }
+        break;
+    }
+    case 'VietNamese':{
+        switch(selecttwo){
+            case 'VietNamese':{
+                document.getElementById('result').innerHTML = 'Vui lòng lựa chọn lại định dạng chuyển đổi Viet-Anh-Viet';
+                break;
+            }
+            case 'English':{
+                vietanh();
+                break;
+            }
+        }
+        break;
+
+    }
+}
+}
+</script>
+</html>
