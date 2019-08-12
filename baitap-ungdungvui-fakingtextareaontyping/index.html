@@ -10,23 +10,37 @@
     <center>
         <h2>Type anthing slowly</h2>
         <form>
-            <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();" id="dangmy">1231232</textarea>
+            <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();" id="dangmy"></textarea>
         </form>
     </center>
 </body>
 
 
 <script>
-    let write = 'anh my dep trai';
+    let write = 'anh my dep trai  ';
     let convertwrite = write.toString();
-    let number = document.getElementById('dangmy').value
-    let numberlength = number.length
+    
     let result = ""
 
 function typeTextarea(){
+    let number = document.getElementById('dangmy').value
+    let numberlength = number.length
+// alert(convertwrite[1])
+// alert(numberlength);
+if(numberlength>0){
+for(let i=0;i<=(numberlength-1);i++){
+    result += convertwrite[i]
 
-alert(numberlength);
+if(numberlength==17){
+    document.getElementById('dangmy').value = "" 
+    result = ""
+}
+}
+}
+document.getElementById('dangmy').value = result
+result = ""
 
+// number = result;
 //     let write = 'anh my dep trai';
 //     let convertwrite = write.toString();
 //     let number = document.getElementById('dangmy').value
@@ -38,7 +52,7 @@ alert(numberlength);
 //     }
 // }
 // document.getElementById('dangmy').value = result
-}
 
+}
 </script>
 </html>
