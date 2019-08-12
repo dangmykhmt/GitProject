@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h2>Type anthing slowly</h2>
+        <form>
+            <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();" id="dangmy">1231232</textarea>
+        </form>
+    </center>
+</body>
+
+
+<script>
+    let write = 'anh my dep trai';
+    let convertwrite = write.toString();
+    let number = document.getElementById('dangmy').value
+    let numberlength = number.length
+    let result = ""
+
+function typeTextarea(){
+
+alert(numberlength);
+
+//     let write = 'anh my dep trai';
+//     let convertwrite = write.toString();
+//     let number = document.getElementById('dangmy').value
+//     let numberlength = number.length
+//     let result = ""
+// if(numberlength>0){
+//     for(let i =0;i<=j;i++){
+//         result += numberlength[i]
+//     }
+// }
+// document.getElementById('dangmy').value = result
+}
+
+</script>
+</html>

@@ -15,22 +15,37 @@
         let ArrayA = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
         let ArrayB = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
         let result = [];
-for(i=0;i<convertImprotArray.length;i++){
-    // if(convertImprotArray[i]!==ArrayA[i] && convertImprotArray[i]!==ArrayB[i]){
-    //     result.push(convertImprotArray[i]);
-    // }
-    // else{
-    for(j=0;j<ArrayA.length;j++){
-        if(convertImprotArray[i]===ArrayA[j]){
-            result.push(ArrayB[j]);
-        }
-        else if(convertImprotArray[i]===ArrayB[j]){
-            result.push(ArrayA[j]);
-        }
-    }
+// for(i=0;i<convertImprotArray.length;i++){
+//     // if(convertImprotArray[i]!==ArrayA[i] && convertImprotArray[i]!==ArrayB[i]){
+//     //     result.push(convertImprotArray[i]);
+//     // }
+//     // else{
+//     for(j=0;j<ArrayA.length;j++){
+//         if(convertImprotArray[i]===ArrayA[j]){
+//             result.push(ArrayB[j]);
+//         }
+//         else if(convertImprotArray[i]===ArrayB[j]){
+//             result.push(ArrayA[j]);
+//         }
+//     }
+// // }
 // }
-}
-document.write(result.join())
+// document.write(result.join())
+
+for(i=0;i<convertImprotArray.length;i++){
+           let indexA = findIndex(ArrayA, convertImprotArray[i]);
+           let indexB = findIndex(ArrayB, convertImprotArray[i]);
+           if(indexA) result.push(ArrayB[indexA]);
+           if(indexB) result.push(ArrayA[indexB]);
+           if(!indexA && !indexB) result.push(convertImprotArray[i]);
+       }
+       function findIndex(array, keyword) {
+           for(let index in array) {
+               if(array[index] === keyword) return index;
+           }
+           return false;
+       }
+       document.write(result);
     </script>
 </body>
 

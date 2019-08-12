@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bài tập tic tac toe</title>
+</head>
+<style>
+table{
+    width: 250px;
+    height: 250px;
+    border-style: solid;
+}
+tr,td{
+    border-style: solid;
+}
+h3{
+    text-align: center
+}
+
+</style>
+<body onload="Start1();">
+
+    <h3>Caro Game Simple</h3>
+  <p id="carogame">sdadsadas</p> 
+    <!-- <input type="button" value="Change Value" onclick="click1();">   -->
+    
+</body>
+<script>
+        let board = [];
+        let data = "";
+    for (let i = 0; i < 10; i++) {
+        board[i] = new Array('.','.','.','.','.','.','.','.','.','.');
+    }
+
+
+
+    function Start1(){
+            data = ""
+            data += '<center><table>'
+        for(let i =0;i<10;i++){
+            data += '<tr>';
+        for(let j =0;j<10;j++){
+            data += '<td>' + '<center>'+ "<button style='width:50px; height:50px' onclick='convertBUTTON("+i +","+ j + ");'" + ">" +board[i][j] + '</button>' + '</center>'+ '</td>'
+        }
+            data += '</tr>';
+        }
+            data += '</table></center>';
+            document.getElementById('carogame').innerHTML = data;
+            
+    }
+
+
+
+
+
+
+    function click1(){
+        let a=prompt('Nhập chỉ số index hàng');
+        let b=prompt('Nhập chỉ số index cột');
+        board[a][b] = 'x';
+        Start1()
+}
+
+let player = true;
+
+function convertBUTTON(i,j){
+    board[i][j] = 'x';
+    
+    player ? board[i][j] = 'x' : board[i][j] = 'o';
+    player = !player;
+    Start1();
+    test123()
+}
+
+
+
+
+    function test123(){
+        for(let i=0;i<10;i++){
+            for(let j=0;j<10;j++){
+               if((board[i][j] === "x" )&&( board[i][(j+1)] === "x")&&( board[i][(j+2)] === "x")) {
+                        alert('Win')
+                        break;
+               }
+            }
+        }
+
+        for(let i=0;i<10;i++){
+            for(let j=0;j<10;j++){
+               if((board[i][j] === "x" )&&( board[(i+1)][(j)] === "x")&&( board[(i+2)][(j)] === "x")) {
+                        alert('Win')
+                        break;
+               }
+            }
+        }
+
+        for(let i=0;i<10;i++){
+            for(let j=0;j<10;j++){
+               if((board[i][j] === "x" )&&( board[(i+1)][(j+1)] === "x")&&( board[(i+2)][(j+2)] === "x")) {
+                        alert('Win')
+                        break;
+               }
+            }
+        }
+
+        for(let i=0;i<10;i++){
+            for(let j=9;j>=0;j--){
+               if((board[i][j] === "x" )&&( board[(i+1)][(j-1)] === "x")&&( board[(i+2)][(j-2)] === "x")) {
+                        alert('Win')
+                        break;
+               }
+            }
+        }
+    }
+
+
+
+
+
+
+        </script>
+</html>
