@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">1</p>
+    <p id="p2">2</p>
+    <script>
+    let importArray = prompt('Nhập vào 1 dãy số bất kỳ');
+    let array = importArray.toString();
+    MAX = array[0];
+    let result = 0
+    for(let i=0;i<array.length;i++){
+        if(array[i]>MAX){
+            MAX = array[i]
+        }
+        result = parseInt(result) + parseInt(array[i])
+    }
+
+document.getElementById('p1').innerHTML = 'phần tử có giá trị lớn nhất là: ' + MAX
+document.getElementById('p2').innerHTML = 'Giá trị trung bình của các phần tử = ' + result/array.length
+
+    </script>
+</body>
+</html>

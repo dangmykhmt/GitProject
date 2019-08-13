@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let array =[];
+    let impromtnumber = parseInt(prompt('Nhập số cần kiểm tra'))
+    let number = -1;
+    for(let i=0;i<10;i++){
+        array[i] = Math.floor(Math.random() * 10);
+    }
+
+    document.write(array);
+    document.write('<br>')
+    
+    for(let i=0;i<10;i++){
+        if(array[i]==impromtnumber){
+            number = i;
+            break;
+        }
+    }
+
+if(number!=(-1)){
+
+
+
+    for(number;number<array.length;number++){
+        array[number] = array[number+1];
+    }
+    array[array.length-1] = 0
+    document.write(array)
+}else{
+    alert('không trùng có số nào trong mãng')
+}
+
+    </script>
+</body>
+</html>

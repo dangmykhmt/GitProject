@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let array = [];
+    let importNumber = prompt('Nhập số cần tìm trong mãng')
+    let isfind = false;
+    for(let i=0;i<10;i++){
+        array[i] = Math.floor(Math.random() * 10);
+    }
+
+    for(let i =0;i<10;i++){
+        if(importNumber==array[i]){
+            isfind = true;
+            // alert('V is in the array');
+            break;
+        }
+    }
+
+if(isfind){
+    alert("V is in the array");
+}
+else{
+    alert('V is not in the array"')
+}
+    
+    </script>
+</body>
+</html>

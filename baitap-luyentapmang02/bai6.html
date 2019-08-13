@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let importstring = prompt('Nhập chuổi');
+    let converchuachuyendoi = importstring.split("");
+    let converimportstring = importstring.split("-");
+    let resultjoin = converimportstring.join("_");
+    let result = resultjoin.split("");
+    document.write('mãng chưa chuyển đổi: ['+converchuachuyendoi+']<br>');
+    document.write('mãng đã chuyển đổi: ['+result+']');
+
+    </script>
+</body>
+</html>
