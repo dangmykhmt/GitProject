@@ -10,12 +10,17 @@
     <script>
     //xác định số nguyên tố -> trả về đúng - sai
     function checkSNT(number){
+        if(Number.isInteger(number)){
     for( i=2 ; i<number ; i++ ){
         if ( number%i ===0 ){
             return false;
         }
     }
     return true;
+        } 
+        else{
+            alert('sai dinh dang')
+        }
     }
     
 
