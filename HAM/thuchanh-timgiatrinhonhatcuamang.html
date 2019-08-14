@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+let arr1 = [3, 5, 1, 8, -3, 7, 8];
+
+let arr2 = [7, 12, 6, 9, 20, 56, 89];
+
+let arr3 = [];
+
+let arr4 = [0, 0, 0, 0, 0, 0];
+
+function arrmin(arr){
+    let number=0
+    if( arr.length === 0 ){
+        return -1
+    }
+    MIN = arr[0];
+    for( let i = 0; i < arr.length ; i++ ){
+        if(arr[i] < MIN){
+            MIN = arr[i];
+            number = i
+        }
+    }
+    return number;
+}
+function display(arr){
+if (arrmin(arr) === -1){
+    document.write('mãng '+ arr + ' không có phần tử nào')
+}
+else{
+    document.write('phần tử có giá trị nhỏ nhất mảng [' + arr +'] có index =' + arrmin(arr));
+}
+
+}
+
+display(arr2)
+</script>
+
+</html>

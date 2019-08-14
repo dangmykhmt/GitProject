@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thực hành tạo và gọi hàm</title>
+</head>
+<body>
+    <script>
+    
+
+   function processesConfirm(answer){
+       let result = "";
+    if(answer){
+        result =  'chúc mừng bạn đã vào game';
+    }
+    else{
+        result =  'hẹn gặp lại bạn';
+    }
+    return result;
+   }
+
+   let confirmAnswer = confirm('do you want to play game?');
+   let displayAnswer = processesConfirm(confirmAnswer);
+   alert(displayAnswer);
+
+
+    
+    </script>
+</body>
+</html>

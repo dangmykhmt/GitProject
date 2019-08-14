@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //xác định số nguyên tố -> trả về đúng - sai
+    function checkSNT(number){
+    for( i=2 ; i<number ; i++ ){
+        if ( number%i ===0 ){
+            return false;
+        }
+    }
+    return true;
+    }
+    
+
+ 
+function displaySNT(TotalNumber){
+    let number = 2;
+    while(number<TotalNumber){
+        if (checkSNT(number)){
+            result +=  number + ' , ';      
+        // debugger;
+        }
+        number++
+    }
+    return result;
+}
+
+
+let TotalNumber = prompt('Nhập giá trị để hiển thị các số nguyên tố bắt đầu từ 0 -> giá trị nhập: ')
+ let result="";
+document.write(displaySNT(TotalNumber));
+
+    </script>
+</body>
+</html>
