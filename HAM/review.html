@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Temperature Converter</h2>
+    <h4>Type a value in the Fahrenheit field to convert the value to Celcius</h4>
+    Fahrenheit <input type="number" value="" onchange="FtoC(this.value)"><br>
+    Celcius: <p id="result"></p>
+    <!-- <input type="number" name="" id="" onchange="FtoC2(this.value)">
+    <p id="result2"></p> -->
+    
+    <script>
+    // // let improtNumber = document.getElementById('importnumber').value;
+    function FahrenheitCoverCelcius(Fahrenheit){
+        Fahrenheit = parseInt(Fahrenheit);
+        Celcius =(Fahrenheit - 32)/1.8;
+        return Celcius;
+    }
+    function FtoC(value){
+            let result = FahrenheitCoverCelcius(value);
+            document.getElementById('result').innerHTML = result;
+        }
+    // function show(element, message){
+    //     element.innerHTML = message;
+    // }
+    
+    // function FtoC(value){
+    //     let result = FahrenheitCoverCelcius(value);
+    //     show(document.getElementById('result'), result);
+    // }
+    // function FtoC2(value){
+    //     let result = FahrenheitCoverCelcius(value);
+    //     show(document.getElementById('result2'), result);
+    // }
+    
+    </script>
+
+</body>
+</html>

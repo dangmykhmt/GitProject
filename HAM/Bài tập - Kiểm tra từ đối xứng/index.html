@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = "123a322";
+      let b = 0;
+      let c = a.length - 1;
+      console.log(c);
+      function checkstring(b, c) {
+        if (b > c) {
+          return true;
+        }
+        if (a[b] === a[c]) {
+          return checkstring(b + 1, c - 1);
+        } else {
+          return false;
+        }
+      }
+      // checkstring(b,c)
+
+      if (checkstring(b, c)) {
+        alert("Đối xứng");
+      } else alert(" Không Đối xứng");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let a = "nguyendangmyc7pro";
+    let b = a.split('');
+    let c = prompt('nhập 1 ký tự: ');
+    let numberchar = 0;
+    function checkChart(c){
+    for(let i = 0; i < b.length ; i++){
+        if(b[i] === c){
+            console.log(b[i]);
+
+            numberchar++;
+        }
+    }
+    return numberchar;
+    }
+    
+    alert(checkChart(c));
+    </script>
+</body>
+</html>

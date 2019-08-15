@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+FootToMeter  <input type="txt" value="" onkeyup="ConvertFootToMeter(value)"> Meter
+<p id="result1">Meter</p>
+MeterToFoot  <input type="txt" value="" onkeyup="ConvertMeterToFoot(value)"> Foot
+<p id="result2">Foot</p>
+<body>
+   <script>
+    function FootToMeter(foot){
+        let meter = 0.305*foot;
+        console.log(meter);
+        return meter;
+    }
+
+    function MeterToFoot(meter){
+        let foot = 3.279*meter;
+        return foot;
+    }
+    
+    function ConvertFootToMeter(value){
+         let result = FootToMeter(value);
+        document.getElementById('result1').innerHTML = result + ' Meter';
+    }
+    
+
+    function ConvertMeterToFoot(value){
+         let result =  MeterToFoot(value);
+        document.getElementById('result2').innerHTML = result + ' Foot';
+    }
+    </script>
+</body>
+</html>

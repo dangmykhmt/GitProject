@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        Nhập đường kính hình tròn:  <input id="import1" type="text">
+    <select id="slecect" >
+        <option value="acreage">Tính diện tích</option>
+        <option value="perimeter">Tính chu vi</option>
+    </select>
+    <input type="button" value="Chuyển đổi" onclick="chuyendoi();">
+    <p id="result">result</p>
+
+<script>
+const PI = 3.14;
+
+function acreage(number1){
+    let result = number1*number1*PI;
+    return result;
+}
+
+
+function perimeter(number1){
+    let result1 = (number1*2) *PI;
+    return result1;
+}
+
+function chuyendoi(){
+let selectObject = document.getElementById('slecect').value;
+let number1 = document.getElementById('import1').value;
+
+console.log(selectObject);
+
+
+if(selectObject==='acreage'){
+    document.getElementById('result').innerHTML = acreage(number1);
+}
+else{
+    document.getElementById('result').innerHTML = perimeter(number1);
+}
+}
+// switch(selectObject){
+//     case 'acreage':{
+//         document.getElementById('result').innerHTML = acreage(number1)
+//     }
+//     case 'perimeter':{
+//         document.getElementById('result').innerHTML = perimeter(number1)
+//     }
+// }
+// }
+
+</script>
+
+</body>
+</html>

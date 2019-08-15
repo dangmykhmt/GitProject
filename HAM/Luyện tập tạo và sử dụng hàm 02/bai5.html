@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=[]
+    a[0] = +prompt('nhập số a');
+    a[1] = +prompt('nhập số b');
+    a[2] = +prompt('nhập số c');
+console.log(a.length)
+    function sosanh(a){
+        MIN = a[0];
+        for(let i =1;i<a.length;i++){
+           if(a[i]<MIN){
+               MIN = a[i];
+           }
+        }
+        return MIN;
+    }
+   alert( 'số nhỏ nhất trong các số nhập vào là: ' + sosanh(a))
+
+    </script>
+</body>
+</html>
