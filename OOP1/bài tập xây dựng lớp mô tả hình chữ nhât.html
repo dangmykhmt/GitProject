@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <canvas id='canvas' width="700px" height="500px" style="border: 1px solid black"></canvas>
+</head>
+<body>
+    <script>
+        let Rectangle = function(lengthA,withA){
+            this.lengthA = lengthA;
+            this.withA = withA;
+
+
+            this.acreage =function(){
+             return lengthA * withA;
+            }
+            this.perimeter =function(){
+                return (lengthA+withA)*2
+            }
+        }
+let rectangle = new Rectangle(300,200);
+let ctx = document.getElementById('canvas').getContext("2d");
+ctx.rect(20, 20, rectangle.lengthA, rectangle.withA);
+ctx.stroke();
+
+document.write('<br> diện tích hình chữ nhật : '+ rectangle.acreage() +'<br> chu vi hình chữ nhật : '+ rectangle.perimeter() )
+        
+        </script>
+</body>
+</html>

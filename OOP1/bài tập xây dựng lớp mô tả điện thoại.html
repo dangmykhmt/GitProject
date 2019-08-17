@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function Mobile(battery, type, status) {
+        this.battery = battery;
+        this.type = type;
+        this.status = status;
+        this.messages = {
+            writting: [],
+            received: [],
+            sent: [],
+        };
+        this.checkStatus = function() {
+            return this.status ? true : false;
+        };
+        this.onOff = function() {
+            this.status = !this.status;
+        };
+        this.chargeBattery = function() {
+            this.battery = 100;
+        };
+        this.sendMessage = function(message) {
+            this.messages.sent.push(message);
+        }
+        this.recevieMessage = function(message) {
+            this.messages.received.push(message);
+        }
+        this.readMesRec = function(index) {
+            return this.messages.received[index];
+        }
+     }
+     var nokia = new Mobile(20, 'Nokia', true);
+     var iphone = new Mobile(50, 'Iphone', false);
+     console.log(nokia.checkStatus());
+     iphone.chargeBattery();
+     console.log(iphone.battery);
+     let mes = "Day di hoc";
+     iphone.sendMessage(mes);
+     nokia.recevieMessage(mes);
+     console.log(nokia.readMesRec(0));
+     </script>
+</body>
+</html>
