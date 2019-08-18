@@ -1,0 +1,97 @@
+/* The device with borders */
+.phone {
+    position: relative;
+    float: left;
+    width: 260px;
+    height: 450px;
+    margin: auto;
+    border: 16px black solid;
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    border-radius: 36px;
+   }
+   /* The horizontal line on the top of the device */
+   .phone:before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 10px;
+   }
+   /* The circle on the bottom of the device */
+   .phone:after {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 50%;
+    bottom: -65px;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 50%;
+   }
+   /* The screen (or content) of the device */
+   .phone .content {
+    width: 260px;
+    height: 450px;
+    background-image: url("background.jpg");
+   }
+   /* The Modal (background) */
+   .modal {
+    display: none;
+    overflow: auto;  /Enable scroll if needed /
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 218px;
+    height: 291px;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    background-color: rgb(252, 255, 80); /* Fallback color */
+    }
+    /* The Close Button */
+    .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+   }
+   button {
+    color: white;
+    background-color: rgb(143, 143, 143);
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    border-radius: 20px;
+   }
+   table {
+    position: absolute;
+    top: 380px;
+   }
+   #phone2 {
+    float: right;
+   }
+   /* Energy bar */
+   #maxEnergy {
+    width: 100px;
+    background-color: rgb(255, 255, 255);
+   }
+   #iphoneEnergy , #nokiaEnergy {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(4, 255, 4);
+   }
