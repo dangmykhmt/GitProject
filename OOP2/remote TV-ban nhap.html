@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    class Remote{
+        constructor(id){
+            this.id = id;
+        }
+        changechannel(channelstatus){
+            this.channelstatus =  channelstatus;
+        
+        }
+        changevolum(){
+            this.numbervolum += 1
+        }
+        connectToRemote(tivi){
+            this.tivi = tivi;
+        }
+    }
+    
+    class Tivi{
+        constructor(channelstatus,numbervolum,status){
+            this.channel = channelstatus;
+            this.numbervolum = numbervolum;
+            this.status = status;
+        }
+        connectToRemote(remote){
+            this.remote = remote;
+        }
+        changechannel1(number){
+            if(this.status){
+            // this.remote.changechannel(number);
+            this.channel  =  this.remote.channelstatus;
+        }
+        else{
+            console.log('Tivi đang tắt');
+        }
+        }
+        changevolum(changevolum){
+           this.remote.changevolum();   
+           this.numbervolum = this.remote.numbervolum;
+
+        }
+        
+        turnON(){
+            this.status  = true;
+        }
+        turnOFF(){
+            this.status = false;
+        }
+    }
+
+    let remote = new Remote("LG");
+    let tivi = new Tivi(7,50,false)
+    // tivi.connectToRemote(remote)
+    remote.connectToRemote(tivi);
+        </script>
+</body>
+</html>

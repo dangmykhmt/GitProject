@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+    class Mouse{
+        constructor(name,weight,speed,status){
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.status = status;
+        }
+        mousespeak(){
+            return "chít chít";
+        }
+    }    
+
+    class Cat{
+        constructor(namecat,weightcat,speedcat){
+            this.namecat = namecat;
+            this.weightcat = weightcat;
+            this.speedcat = speedcat;
+        }
+       
+        connectToMouse(mouse){
+                this.mouse = mouse
+        }
+        catchmouse(){
+            if(this.speedcat>this.mouse.speed){
+              return  console.log('bắt được chuột');
+        }
+        else {
+            return  console.log('mèo béo giảm cân đi, chạy chậm thế sao bắt được chuột')
+        }
+        }
+        eatmouse(){
+            if(this.speedcat>this.mouse.speed){
+                if(this.mouse.status === true){
+                    this.weightcat += this.mouse.weight;
+                    console.log('thịt chuột ngon quá');
+                   
+                }
+                else {
+                  console.log('chuột chết mèo không ăn nhé')
+                }
+
+            }
+        }
+    }
+let mouse = new Mouse("Rat",10,10,false);
+let cat = new Cat("Cat",100,50);
+cat.connectToMouse(mouse);
+console.log('tốc độ con của chuột rat: '+cat.mouse.speed)
+console.log('tốc độ con của mèo cat: '+cat.speedcat)
+cat.catchmouse()
+cat.eatmouse()
+console.log('trọng lượng mèo sau khi ăn rat 10 = '+cat.weightcat);
+
+    </script>
+  </body>
+</html>

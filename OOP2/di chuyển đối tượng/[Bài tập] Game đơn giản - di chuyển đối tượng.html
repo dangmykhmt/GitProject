@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="123">
+      <!-- <img src="pikachu.png" width="100" height="100" style="top:000px;left:100px; position: absolute;" > -->
+    </div>
+
+    <script>
+      let Hero = function(image, height, width, top, left) {
+        this.image = image;
+        this.height = height;
+        this.width = width;
+        this.top = top;
+        this.left = left;
+        this.runright = function(){
+             this.left += 10;
+        }
+        this.rundown = function(){
+             this.top += 10;
+        }
+        this.runleft = function(){
+             this.left -= 10;
+        }
+        this.runup = function(){
+             this.top -= 10;
+        }
+        this.displayHero = function() {
+          return (
+            '<img src="' +
+            this.image +
+            '" width="' +
+            this.width +
+            '" height="' +
+            this.height +
+            '" style="top:' +
+            this.top +
+            "px;left:" +
+            this.left +
+            'px; position: absolute;" >'
+          );
+        };
+      };
+
+      let hero = new Hero("pikachu.png", 100, 100, 0, 0);
+
+
+
+
+      function runhero() {
+          if(hero.left<(window.innerWidth - hero.width) && hero.top===0){
+                hero.runright();
+                document.getElementById("123").innerHTML = hero.displayHero();
+          }
+          setTimeout(runhero, 5)
+      }
+      runhero()
+    </script>
+  </body>
+</html>

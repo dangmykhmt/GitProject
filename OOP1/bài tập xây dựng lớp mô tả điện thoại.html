@@ -1,50 +1,140 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-    function Mobile(battery, type, status) {
-        this.battery = battery;
-        this.type = type;
-        this.status = status;
-        this.messages = {
-            writting: [],
-            received: [],
-            sent: [],
-        };
-        this.checkStatus = function() {
-            return this.status ? true : false;
-        };
-        this.onOff = function() {
-            this.status = !this.status;
-        };
-        this.chargeBattery = function() {
-            this.battery = 100;
-        };
-        this.sendMessage = function(message) {
-            this.messages.sent.push(message);
-        }
-        this.recevieMessage = function(message) {
-            this.messages.received.push(message);
-        }
-        this.readMesRec = function(index) {
-            return this.messages.received[index];
-        }
-     }
-     var nokia = new Mobile(20, 'Nokia', true);
-     var iphone = new Mobile(50, 'Iphone', false);
-     console.log(nokia.checkStatus());
-     iphone.chargeBattery();
-     console.log(iphone.battery);
-     let mes = "Day di hoc";
-     iphone.sendMessage(mes);
-     nokia.recevieMessage(mes);
-     console.log(nokia.readMesRec(0));
-     </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mobile</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- nokia -->
+    Yes, it is Nokia but seem like Iphone.
+    <strike>Lazy to write down css again</strike>
+    <div class="powerNK">
+      <button onclick="changeStatut('nokia')">test</button>
+    </div>
+    <div class="smartphone" style="float: left">
+      <div class="content">
+        <button class="content-btnNK" onclick="checkStatut('nokia')">
+          Status
+        </button>
+        <!-- send mess start from here -->
+        <button class="content-btnNK" onclick="sendMsg('nokia')">
+          Send Msg
+        </button>
+        <!--this is a form for msg pre-send -->
+        <div id="prepareSendMsgNK">
+          <h2>Send message</h2>
+          <div class="sendMsg">
+            <h3>Send to: Iphone</h3>
+            <textarea
+              id="typingMsgonNK"
+              onkeyup="getValueofTextarea('nokia')"
+            ></textarea>
+            <button class="btnSend" onclick="sendMess('nokia')">Send</button>
+            <button class="btnCancle" onclick="saveIntoDraft('nokia')">
+              Cancle
+            </button>
+          </div>
+        </div>
+        <!-- end form -->
+        <button class="content-btnNK" onclick="showReceiveMsg('nokia')">
+          Receive Msg
+        </button>
+        <button class="content-btnNK" onclick="checkSended('nokia')">
+          Sended Msg
+        </button>
+        <table id="tableNK"></table>
+      </div>
+      <div class="wrapper">
+        <button onclick="charging('nokia')" class="charge"></button>
+      </div>
+    </div>
+    <!-- lost nokia aka Iphone -->
+
+    <!-- Iphone -->
+    <div class="power">
+      <button onclick="changeStatut('iphone')">test</button>
+    </div>
+
+    <div class="smartphone">
+      <div class="content">
+        <button class="content-btnIP" onclick="checkStatut('iphone')">
+          Status
+        </button>
+        <!-- send mess start from here -->
+        <button class="content-btnIP" onclick="sendMsg('iphone')">
+          Send Msg
+        </button>
+        <!--this is a form for msg pre-send -->
+        <div id="prepareSendMsgIP">
+          <h2>Send message</h2>
+          <div class="sendMsg">
+            <h3>Send to: Nokia</h3>
+            <textarea
+              id="typingMsgonIP"
+              onkeyup="getValueofTextarea('iphone')"
+            ></textarea>
+            <button class="btnSend" onclick="sendMess('iphone')">Send</button>
+            <button class="btnCancle" onclick="saveIntoDraft('iphone')">
+              Cancle
+            </button>
+          </div>
+        </div>
+        <!-- end form -->
+        <button class="content-btnIP" onclick="showReceiveMsg('iphone')">
+          Receive Msg
+        </button>
+        <button class="content-btnIP" onclick="checkSended('iphone')">
+          Sended Msg
+        </button>
+        <table id="tableIP"></table>
+      </div>
+
+      <div class="wrapper">
+        <button onclick="charging('iphone')" class="charge"></button>
+      </div>
+    </div>
+    <!-- lost Iphone -->
+    <script src="main.js"></script>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></body>
 </html>

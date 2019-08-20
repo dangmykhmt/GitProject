@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let Battery = function(energy){
+        this.energy = energy;
+        this.setEnergy = function(){
+            return this.energy;
+        }
+        this.decreaseEnergy = function(){
+            if(this.energy>0){
+                this.energy--;
+            }
+        }
+    }
+let battery = new Battery(20);
+
+    let FlashLamp = function(status){
+        this.status = status;
+
+        this.setBattery = function(aaa){
+            this.battery2 = aaa;
+        }
+        this.getBatteryInfo = function () {
+        return this.battery2.setEnergy();
+    };
+        
+        this.turnOn = function(){
+            return this.status = true;
+        }
+        this.turnOff = function(){
+            return this.status = false;
+        }
+        this.light = function(){
+            this.status?alert("turnON"):alert("tunrOff")
+        }
+    } 
+
+let flashlamp = new FlashLamp(true)
+flashlamp.setBattery(battery);
+console.log('dung lượng pin: ' +flashlamp.getBatteryInfo()) 
+console.log('trạng thái đèn: ' + flashlamp.status) 
+
+// tắt đèn:
+console.log('tắt đèn')
+flashlamp.turnOff();
+
+console.log('trạng thái đèn: ' + flashlamp.status) 
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Remote {
+        constructor(id) {
+          this.id = id;
+        }
+        changeChannelR(changeChannelR) {
+          if (tivi.tvStatus === true) {
+            this.changeChannelR = changeChannelR;
+            tivi.channelStatus = this.changeChannelR;
+          } else {
+            console.log("Tivi not ON");
+          }
+        }
+        changeVollumR() {
+          if (tivi.tvStatus === true) {
+            tivi.changeVollumT();
+          } else {
+            console.log("Tivi not ON");
+          }
+        }
+        remoteConnectTv(tivi) {
+          this.tivi = tivi;
+        }
+      }
+
+      class Tivi {
+        constructor(channelStatus, vollumStatus, tvStatus) {
+          this.channelStatus = channelStatus;
+          this.vollumStatus = vollumStatus;
+          this.tvStatus = tvStatus;
+        }
+        changeChannelT(changeChannelT) {
+          // debugger;
+          if (this.tvStatus) {
+            this.channelStatus = changeChannelT;
+          } else {
+            console.log("Tivi not ON");
+          }
+        }
+        changeVollumT(abc) {
+          if (this.tvStatus) {
+            if (abc === "cong") {
+              this.vollumStatus++;
+            } else if (abc === "tru") {
+              this.vollumStatus--;
+            }
+          } else {
+            console.log("Tivi not ON");
+          }
+        }
+        turnON() {
+          this.tvStatus = true;
+        }
+        turnOFF() {
+          this.tvStatus = false;
+        }
+      }
+
+      let tivi = new Tivi(1, 20, false);
+      let remote = new Remote("LG");
+      remote.remoteConnectTv(tivi);
+      console.log(tivi.turnON());
+      console.log(tivi);
+      console.log(tivi.changeChannelT(7));
+      console.log(tivi);
+      console.log(remote.changeChannelR(3));
+      console.log(tivi);
+      console.log(remote.tivi.changeVollumT("cong"));
+      console.log(remote.tivi.changeVollumT("cong"));
+      console.log(tivi);
+      // // tivi.remoteConnectRemote(remote)
+    </script>
+  </body>
+</html>
