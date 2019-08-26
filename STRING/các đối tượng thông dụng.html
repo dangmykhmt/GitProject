@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function youLive(){
+        let birthday = new Date(1993,02,12,21,15);
+        let current = new Date();
+        let live = current.getFullYear() - birthday.getFullYear()
+        console.log('Tôi đã sống ' + live + ' năm');
+        console.log('Tôi đã sống ' + live*12 + ' tháng');
+        console.log('Tôi đã sống ' + live*12*365 + ' ngày');
+        console.log('Tôi đã sống ' + live*12*365*24 + ' giờ');
+        console.log('Tôi đã sống ' + live*12*365*24*60 + ' phút');
+        console.log('Tôi đã sống ' + live*12*365*24*60*60 + ' giây');
+        }
+
+
+        function isMath(){
+        console.log(Math.round(Math.random()*10)) //random 0-10
+        console.log(Math.round(Math.random()*400)) //random 0-400
+        console.log(Math.floor(Math.random() * (100 - 50) ) + 50); // random max min
+        }
+
+        function findMin(){
+            let listnumber = [5,7,2,9];
+            let min = listnumber[0];
+            for(let i = 1;i<listnumber.length;i++){
+                if(listnumber[i]<min){
+                    min = listnumber[i];
+                }
+            }
+            return console.log('giá trị nhỏ nhất: ' + min)
+        }
+
+        function countChart(){
+            let str = "Tôi yêu ngôn ngữ lập trình Javascript"
+            let patt = /a/
+            let num = 0
+            for(let i = 0;i<str.length;i++){
+                if(patt.test(str[i])){
+                    num ++
+                }
+            }
+            console.log(num)
+            str = str.split("");
+            numstr = str.length;
+            console.log('số  lượng từ : '+numstr)
+            str = "Tôi yêu ngôn ngữ lập trình Javascript"
+            let newString = str.replace("Javascript","Typescript")
+            console.log(newString);
+        }
+        youLive()
+        findMin()
+        countChart()
+    </script>
+</body>
+</html>
