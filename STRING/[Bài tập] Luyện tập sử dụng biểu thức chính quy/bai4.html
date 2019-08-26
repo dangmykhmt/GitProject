@@ -8,13 +8,13 @@
   </head>
   <body>
     <script>
-      let regexp = /^[CAP]+[0-9]{4}[GHIKLM]/;
-      let str = "C0318G";
-      if (regexp.test(str)) {
-        alert("true");
-      } else {
-        alert("false");
+      let str = prompt("Nhập pass:(6 số) ");
+      let regexp = /^[0-9]{6}$/;
+      function check(regexp){
+      if (regexp.test(str)) alert("Pass right");
+      else alert("Pass wrong");
       }
+      check(regexp)
     </script>
   </body>
 </html>

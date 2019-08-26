@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function check(str){
+    let regexp = /^[aăâeêioôơuưy]$/i;
+    if (regexp.test(str)){
+        return true;
+    }
+    else {
+        return false;
+    }
+    }
+
+    function start(){
+        let str = prompt('nhập vào chuỗi');
+        let songuyenam = 0;
+        let sophuam = 0;
+        for(let i = 0; i< str.length;i++){
+            if(check(str[i])){
+                songuyenam++;
+            }
+            else{
+                sophuam++;
+            }
+        }
+        alert('số phụ âm: '+ sophuam + '     số nguyên âm: '+songuyenam)
+    }
+    
+    start()
+    </script>
+</body>
+</html>

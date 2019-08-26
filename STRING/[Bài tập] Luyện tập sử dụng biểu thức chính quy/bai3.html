@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function is_Vowel(str) {
+        let regexp = /^[aăâeêioôơuưy]$/i;
+        if (regexp.test(str)) {
+          return true;
+        } else return false;
+      }
+      
+      function bai3() {
+        let str = prompt("Nhập vào chuỗi ");
+        console.log(str);
+        let songuyenam = 0;
+        let sophuam = 0;
+        for (let i = 0; i < str.length; i++) {
+          if (is_Vowel(str[i])) {
+            songuyenam++;
+          } else if (str[i] != " ") sophuam++;
+        }
+        alert("Số nguyên âm trong chuỗi: " + songuyenam);
+        alert("Số phụ âm trong chuỗi: " + sophuam);
+      }
+      bai3();
+    </script>
+  </body>
+</html>

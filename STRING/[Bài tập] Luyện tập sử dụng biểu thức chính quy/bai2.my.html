@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let str = prompt('Nhập vào chuỗi cần phân tích: ');
+    str = str.trim();
+    str = str.split("")
+if(str.length>0){
+    let num = 1;
+    for(let i = 0; i<str.length;i++){
+        if(str[i]!== " " && str[i+1]===" "){
+            num++
+        }
+    }
+    alert('chuỗi có '+ num + " từ")
+}
+else {
+    alert('chuỗi không có từ nào')
+}
+    </script>
+</body>
+</html>
