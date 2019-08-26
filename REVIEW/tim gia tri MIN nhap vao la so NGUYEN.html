@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nhập vào 1 chuỗi số nguyên</title>
+</head>
+<body>
+
+        <!-- Number.isInteger()  chỉ nhận số nguyên -->
+
+    <script>
+    let importString = prompt('Nhập vào 1 chuỗi bất kỳ');
+    let importStringCover = importString.split("");
+    console.log(importStringCover)
+    function checkString(arr){
+        let min = arr[0];
+        for(let i = 1;i<arr.length ;i++){
+            // debugger;
+            arr[i] = parseInt(arr[i])
+            if(Number.isInteger(arr[i])===false){
+               return alert('không đúng định dạng')
+           
+            }
+                if(arr[i]<min){
+                min = arr[i]
+                }
+            }
+            return console.log( min);
+    }
+    checkString(importStringCover)
+    </script>
+</body>
+</html>

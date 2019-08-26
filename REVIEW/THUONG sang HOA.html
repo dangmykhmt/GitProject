@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      let b = "abcdefghijklmnopqrstuvwxyz";
+      let c = prompt("Nhập vào 1 bảng chữ cái: ");
+      let importString = c.split("");
+      for (let i = 0; i < importString.length; i++) {
+        for (let j = 0; j < b.length; j++) {
+          if (importString[i] === b[j]) {
+            importString[i] = a[j];
+          }
+        }
+      }
+      document.write(c + "<br>");
+      let d = importString.join("");
+
+      // let d =  importString.toString("");
+      // let e = ""
+      // for(let i =0;i<d.length;i++){
+      //    e = d.replace(",","")
+      //    d = e
+      // }
+      document.write(d);
+    </script>
+  </body>
+</html>

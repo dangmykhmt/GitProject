@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number = parseInt(prompt("nhập số cần tìm từ 0 - 100:"))
+
+      
+    let arr = [];
+    for(let i = 0; i<100;i++){
+        arr[i] = Math.floor((Math.random()*100)+1)
+    }
+    arr = arr.sort(function(a, b){return a-b})
+
+    function linSearch(arr,number){
+        for(let i = 0;i<arr.length;i++){
+           if( arr[i] === number){
+             return  console.log('Số cần tìm ở vị trí ' + i)
+           }
+           else{
+               console.log('Vị trí '+i+' không phải là số cần tìm')
+           }
+        }
+    }
+
+    function binSearch(){
+    let indexLast = arr.length - 1
+    let indexFirst = 0;
+    let indexCheck =   Math.floor(indexFirst + (indexLast + indexFirst)/2) 
+    let num = 0 
+    while(arr[indexCheck]!==number){
+        // debugger;
+        if(arr[indexCheck]>number){
+            indexLast = indexCheck - 1;
+            console.log('change indexLast' + indexLast)
+        }
+        else if(arr[indexCheck]<number){
+            indexFirst = indexCheck + 1;
+            console.log('change indexFirst' + indexFirst)
+        }
+        else if(indexFirst>indexLast){
+            return console.log('không có đâu')
+        }
+        indexCheck =   Math.floor((indexLast + indexFirst)/2);
+    }
+        console.log('chỉ số index cần tìm '+ indexCheck)
+    }
+    binSearch()
+    // linSearch()
+    </script>
+</body>
+</html>

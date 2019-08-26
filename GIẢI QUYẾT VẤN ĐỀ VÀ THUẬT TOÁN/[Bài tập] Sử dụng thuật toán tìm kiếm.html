@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let regex = /(096|097|098|032|033|034|035|036|036|037|038|039)+[0-9]{6}/
+    let arr = ['2123123','035233423','432432423','324231','09623348','203','035928172','096233192']
+    let data = ""
+// alert(arr.length)
+    for(let i = 0;i<arr.length;i++){
+        if(regex.test(arr[i])){
+          console.log(arr[i])
+        //   alert('1')
+        }
+    }
+    
+    </script>
+</body>
+</html>

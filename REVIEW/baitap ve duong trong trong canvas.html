@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vẽ hình tròn bằng class</title>
+  </head>
+  
+  <canvas style="border: 1px solid red" id="display" width="500px" height="500px"></canvas>
+  <body>
+    <script>
+      class Cirle {
+        constructor(x, y, radius, sAngle, eAngle) {
+          this.x = x;
+          this.y = y;
+          this.radius = radius;
+          this.sAngle = sAngle;
+          this.eAngle = eAngle;
+        }
+        getX(value) {
+          this.x = value;
+        }
+        getY(value) {
+          this.y = value;
+        }
+        getRadius(value) {
+          this.Radius = value;
+        }
+        getsAngle(value) {
+          this.sAngle = value;
+        }
+        geteAngle(value) {
+          this.eAngle = value;
+        }
+        setX() {
+          return this.x;
+        }
+        setY() {
+          return this.y;
+        }
+        setRadius() {
+          return this.Radius;
+        }
+        setsAngle() {
+          return this.sAngle;
+        }
+        seteAngle() {
+          return this.eAngle;
+        }
+
+        drawCirle() {
+          
+        var c = document.getElementById("display");
+        var ctx = c.getContext("2d"); 
+        ctx.beginPath(); 
+        ctx.arc( this.x,this.y, this.radius, this.sAngle, this.eAngle * Math.PI );
+        ctx.stroke();
+        ctx.fillStyle = "green"
+        ctx.fill()
+        }
+      }
+
+      let cirle = new Cirle(50,50,20,0,2);
+      cirle.drawCirle();
+    </script>
+  </body>
+</html>

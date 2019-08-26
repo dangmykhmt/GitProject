@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let arr = new Array(10);
+    for(let i = 0; i<arr.length;i++){
+        arr[i] = new Array(10)
+        for(let j = 0; j<arr.length;j++){
+            arr[i][j] = Math.round(Math.random()*10)
+        }
+    }
+    let number = 2
+    let count = 0
+    function countNumber(arr,number){
+        for(let i = 0; i<arr.length;i++){
+        for(let j = 0; j<arr.length;j++){
+            if(number === arr[i][j]){
+                count++
+            }
+        }
+        }
+        console.log('số '+number+' xuất hiện '+count+' lần')
+    }
+
+    if(arr.length>0){
+    countNumber(arr,number)
+    } 
+    else {
+        alert('mãng rỗng')
+    }
+
+    </script>
+</body>
+</html>
