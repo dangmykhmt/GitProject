@@ -8,6 +8,16 @@ let radius = 20;
 
 let paddle = { width: 50, height: 10, x: 0, y: canvas.width - 10, speed: 15 };
 
+document.addEventListener("keydown", function(event) {
+  console.log("KEY DOWN");
+  console.log(event);
+  if (event.keyCode === 37) {
+    paddle.x -= paddle.speed;
+  } else if (event.keyCode === 39) {
+    paddle.x += paddle.speed;
+  }
+});
+
 function drawPaddle() {
   context.beginPath();
   context.rect(paddle.x, paddle.y, paddle.width, paddle.height);
